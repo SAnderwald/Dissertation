@@ -1,3 +1,50 @@
+#!/usr/bin/env python3
+"""Train an ensemble of Conditional Variational Autoencoders (CVAEs) for anomaly detection.
+
+This script trains an ensemble of CVAEs on specified data splits (5050, 6040, 9010) using
+mixed precision training on a GPU. It supports reconstruction and classification tasks,
+saving model checkpoints and attempting to generate loss curve plots. The script was
+developed for a dissertation project to evaluate performance across different train-test
+splits, with baseline AUC-ROC metrics (e.g., 0.7397 for 5050, 0.7355 for 6040).
+
+Attributes:
+    CONFIG (dict): Configuration dictionary containing hyperparameters and file paths.
+    SPLIT (str): The data split to train on (e.g., '5050', '6040', '9010'), parsed from
+                 command-line argument.
+    SPLIT_DIR (str): Directory mapping for the split (e.g., '5050' -> '5050', '6040' -> '60_40').
+
+Args:
+    --split (str): Required argument specifying the data split to train on. Choices are
+                   '5050', '6040', or '9010'.
+
+Returns:
+    None: The script saves model checkpoints to the CHECKPOINT_DIR and attempts to save
+          loss curves as PNG files. Logs are written to train_ensemble_cvae_{SPLIT}.log.
+
+Raises:
+    FileNotFoundError: If the TRAIN_FILE is inaccessible.
+    RuntimeError: If the batch count exceeds the expected total.
+    Exception: For other unforeseen errors during training or saving.
+
+Example:
+    python train_ensemble_cvae.py --split 5050
+
+Notes:
+    - Requires a GPU-enabled environment (e.g., tf_gpu Conda environment).
+    - Excludes problematic images listed in the problematic_images set.
+    - Current issue: Loss curve PNG generation may fail due to empty loss data.
+
+Author: Scott Anderwald
+Date: 2025-06-25
+
+"""
+
+
+
+
+
+
+
 # train_ensemble_cvae.py
 import tensorflow as tf
 import numpy as np
