@@ -58,22 +58,12 @@ This repository contains the code and data for training both single and ensemble
 - GPU memory growth is enabled with a configurable limit.
 - Logs saved to `/home/sanderwald/Projects/dissertationProject/train_ensemble_cvae_{SPLIT}.log` for ensemble, and a similar path for single (if applicable).
 
-## Troubleshooting
-- **No PNG Output**: The `plot_losses` function fails to generate `loss_curve_{SPLIT}.png` for the ensemble CVAE. Check logs for `Failed to generate plot` or empty `train_losses`/`val_losses`. Adjust `NUM_CVAES` (e.g., 3) or `BATCH_SIZE`. Single CVAE PNGs may work—verify.
-- **OOM Errors**: Reduce `BATCH_SIZE` to 1 or memory limit to 6000MB for either model.
-- **Log Errors**: Review for exceptions (untraced functions are benign).
-- **Cache Issues**: Clear cache: `find /home/sanderwald/Projects/dissertationProject -name "*.pyc" -delete`
-- **Environment**: Ensure `tf_gpu` is active (`which python` should return `/home/sanderwald/miniconda3/envs/tf_gpu/bin/python`).
-
-## Current Status
-- Single and ensemble CVAE training succeed, saving checkpoints.
-- Single CVAE PNGs exist; ensemble PNG generation is unresolved. Debugging continues.
-
 ## Future Improvements
 - Automate split iteration for both single and ensemble scripts.
 - Fix ensemble plot generation with fallback options.
 - Standardize paths across single and ensemble scripts.
+- Introduce sketetal algorithm
 
 ## Contact
-For issues, contact the author (you) or dissertation supervisor/SME.
+For issues, contact the author 
 
