@@ -1,3 +1,43 @@
+#!/usr/bin/env python3
+"""Train a single Conditional Variational Autoencoder (CVAE) for anomaly detection.
+
+This script trains a single CVAE on specified data splits (5050, 6040, 9010) using
+mixed precision training on a GPU. It is designed as a baseline model for a dissertation
+project, supporting reconstruction and classification tasks, and saving model checkpoints.
+The script processes image data, excludes problematic images, and tracks performance metrics
+such as AUC-ROC (e.g., 0.7397 for 5050 split).
+
+Attributes:
+    CONFIG (dict): Configuration dictionary containing hyperparameters and file paths.
+    SPLIT (str): The data split to train on (e.g., '5050', '6040', '9010'), parsed from
+                 command-line argument.
+    SPLIT_DIR (str): Directory mapping for the split (e.g., '5050' -> '5050', '6040' -> '60_40').
+
+Args:
+    --split (str): Required argument specifying the data split to train on. Choices are
+                   '5050', '6040', or '9010'.
+
+Returns:
+    None: The script saves model checkpoints to the CHECKPOINT_DIR. Logs are written to
+          train_single_cvae_{SPLIT}.log. (Note: Loss curve PNG generation is not currently
+          implemented but may be added in future versions.)
+
+Raises:
+    FileNotFoundError: If the TRAIN_FILE is inaccessible.
+    RuntimeError: If the batch count exceeds the expected total.
+    Exception: For other unforeseen errors during training or saving.
+
+Example:
+    python train_single_cvae.py --split 5050
+
+Notes:
+    - Requires a GPU-enabled environment (e.g., tf_gpu Conda environment).
+    - Uses a reduced batch size of 1 and memory limit of 6000MB to avoid OOM issues.
+    - Excludes problematic images listed in the problematic_images set.
+
+Author:Scott Anderwald
+Date: 2025-06-25
+
 # train_single_cvae.py
 import tensorflow as tf
 import numpy as np
