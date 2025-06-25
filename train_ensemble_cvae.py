@@ -31,21 +31,12 @@ Example:
 
 Notes:
     - Requires a GPU-enabled environment (e.g., tf_gpu Conda environment).
-    - Excludes problematic images listed in the problematic_images set.
-    - Current issue: Loss curve PNG generation may fail due to empty loss data.
 
 Author: Scott Anderwald
 Date: 2025-06-25
 
-"""
+""
 
-
-
-
-
-
-
-# train_ensemble_cvae.py
 import tensorflow as tf
 import numpy as np
 import os
