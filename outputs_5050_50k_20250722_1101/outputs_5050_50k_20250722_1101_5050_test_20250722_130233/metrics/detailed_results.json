@@ -1,0 +1,40 @@
+{
+  "model_info": {
+    "evaluation_timestamp": "2025-07-22T13:17:07.368544",
+    "test_split": "5050",
+    "image_size": [
+      224,
+      128
+    ]
+  },
+  "basic_metrics": {
+    "roc_auc": 0.7110358991352481,
+    "average_precision": 0.34639367440363994,
+    "equal_error_rate": 0.3444390455686196,
+    "eer_threshold": 0.27189332246780396
+  },
+  "optimal_thresholds": {
+    "eer": 0.27189332246780396,
+    "youden": 0.28593742847442627,
+    "f1_optimal": 0.5
+  },
+  "threshold_metrics": {
+    "default_0.5": {
+      "threshold": 0.5,
+      "accuracy": 0.85446,
+      "precision": 0.7351598173515982,
+      "recall": 0.04303086997193639,
+      "specificity": 0.9972716795634687,
+      "f1_score": 0.08130286579977275,
+      "f2_score": 0.053012841620019756,
+      "f0_5_score": 0.17433676231727124,
+      "balanced_accuracy": 0.5201512747677026,
+      "matthews_correlation_coefficient": 0.15429087169380637,
+      "true_positives": 322,
+      "true_negatives": 42401,
+      "false_positives": 116,
+      "false_negatives": 7161,
+      "total_samples": 50000
+    },
+    "eer_optimal": {
+      "threshold": 
