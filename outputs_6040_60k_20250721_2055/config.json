@@ -1,0 +1,16 @@
+{
+  "split": "6040",
+  "latent_dim": 128,
+  "img_size": [
+    224,
+    128
+  ],
+  "num_samples": 60000,
+  "focal_alpha": 0.7,
+  "focal_gamma": 1.0,
+  "anomaly_loss_weight": 0.8,
+  "best_val_loss": 0.12748552279671033,
+  "epoch": 5,
+  "batch_size": 16,
+  "learning_rate": 1e-05
+}
